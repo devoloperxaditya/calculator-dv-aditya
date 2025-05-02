@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Simple Calculator</title>
+  <style>
+    body { font-family: Arial; text-align: center; padding: 50px; }
+    #calculator { display: inline-block; }
+    input[type="text"] { width: 160px; font-size: 20px; margin-bottom: 10px; text-align: right; }
+    button { width: 40px; height: 40px; font-size: 18px; margin: 2px; }
+  </style>
+</head>
+<body>
+  <h2>Calculator</h2>
+  <div id="calculator">
+    <input type="text" id="display" readonly><br>
+    <button onclick="addValue('1')">1</button>
+    <button onclick="addValue('2')">2</button>
+    <button onclick="addValue('3')">3</button>
+    <button onclick="addValue('+')">+</button><br>
+    <button onclick="addValue('4')">4</button>
+    <button onclick="addValue('5')">5</button>
+    <button onclick="addValue('6')">6</button>
+    <button onclick="addValue('-')">-</button><br>
+    <button onclick="addValue('7')">7</button>
+    <button onclick="addValue('8')">8</button>
+    <button onclick="addValue('9')">9</button>
+    <button onclick="addValue('*')">*</button><br>
+    <button onclick="addValue('0')">0</button>
+    <button onclick="clearDisplay()">C</button>
+    <button onclick="calculate()">=</button>
+    <button onclick="addValue('/')">/</button>
+  </div>
+
+  <script>
+    function addValue(val) {
+      document.getElementById('display').value += val;
+    }
+
+    function clearDisplay() {
+      document.getElementById('display').value = '';
+    }
+
+    function calculate() {
+      let result = eval(document.getElementById('display').value);
+      document.getElementById('display').value = result;
+    }
+  </script>
+</body>
+</html>
